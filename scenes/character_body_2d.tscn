@@ -1,9 +1,22 @@
-[gd_scene format=3 uid="uid://cs3dpg8hey6cw"]
+[gd_scene load_steps=4 format=3 uid="uid://cs3dpg8hey6cw"]
+
+[ext_resource type="Script" uid="uid://dr8bvnfebp76" path="res://addons/health_hitbox_hurtbox/health/health.gd" id="1_lj8jo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lj8jo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2brh"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lj8jo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_g2brh")
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("entity")]
+script = ExtResource("1_lj8jo")
+entity = NodePath("..")
+metadata/_custom_type_script = "uid://dr8bvnfebp76"
