@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3oeoaelhuaem"]
+
+[ext_resource type="PackedScene" uid="uid://dea2a157ds45u" path="res://scenes/tile_map_layer.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cs3dpg8hey6cw" path="res://scenes/character_body_2d.tscn" id="2_lnu2h"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.15
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 64.0
+max_distance = 4959.0
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_yqjtg")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lnu2h")]
+position = Vector2(0, -17)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, 17)
+zoom = Vector2(2.255, 2.255)
