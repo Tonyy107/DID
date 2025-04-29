@@ -6,6 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(-4, 0)
 energy = 0.15
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
